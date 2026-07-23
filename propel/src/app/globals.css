@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #b8ff2e;
+  --accent-warm: #ff6b35;
+  --accent-purple: #7b61ff;
+  --bg: #060606;
+  --surface: #0d0d0d;
+  --surface-2: #111111;
+  --border: #1c1c1c;
+  --text: #e8e8e8;
+  --muted: #505050;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* Form elements */
+select,
+input,
+textarea {
+  color-scheme: dark;
+}
+
+select option {
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* Focus rings */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #2a2a2a !important;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-bg font-bold px-5 py-2.5 rounded-lg text-sm cursor-pointer transition-opacity hover:opacity-90 border-0;
+    font-family: var(--font-sans);
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-muted px-5 py-2.5 rounded-lg text-sm cursor-pointer border border-border transition-colors hover:border-muted;
+    font-family: var(--font-sans);
+  }
+
+  .card {
+    @apply bg-surface border border-border rounded-xl p-6;
+  }
+
+  .inp {
+    @apply w-full px-3.5 py-3 bg-surface border border-border rounded-lg text-text-primary text-sm outline-none transition-colors;
+    font-family: var(--font-sans);
+  }
+
+  .section-label {
+    @apply text-xs font-semibold tracking-widest text-muted/60 uppercase mb-4;
+  }
+
+  .display-heading {
+    @apply font-display font-extrabold tracking-tight;
+  }
+}

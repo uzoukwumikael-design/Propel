@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48">
+  <!-- Icon mark -->
+  <rect width="48" height="48" rx="11" fill="#B8FF2E"/>
+  <!-- P stem -->
+  <rect x="13" y="9" width="6" height="30" rx="1" fill="#060606"/>
+  <!-- P bowl -->
+  <path d="M19 9h5a9 9 0 0 1 0 18h-5z" fill="#060606"/>
+  <!-- Wordmark -->
+  <text x="63" y="34"
+    font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif"
+    font-weight="900"
+    font-size="24"
+    letter-spacing="-1"
+    fill="#0A0A0A">Propel</text>
+</svg>
