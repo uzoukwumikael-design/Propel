@@ -1,5 +1,9 @@
 "use client";
 
+// Tell Next.js to never statically pre-render any /dashboard route.
+// These pages depend on auth state and must be rendered on each request.
+export const dynamic = "force-dynamic";
+
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase";
@@ -35,9 +39,9 @@ function LogoMark({ size = 28 }: { size?: number }) {
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router   = useRouter();
-  const supabase = createClient();
-
   const handleSignOut = async () => {
+    // Lazy init — only runs on the client when the user clicks, never during SSR
+    const supabase = createClient();
     await supabase.auth.signOut();
     router.push("/");
   };
