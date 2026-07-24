@@ -10,6 +10,12 @@ const nextConfig = {
   },
   // Silence hydration warnings from browser extensions
   reactStrictMode: true,
+  // Next.js 15: opt in to static params being synchronous (avoids async-param migration)
+  experimental: {
+    staleTimes: {
+      dynamic: 0,
+    },
+  },
 };
 
 export default nextConfig;
